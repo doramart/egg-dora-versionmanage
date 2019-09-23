@@ -1,6 +1,6 @@
 {
   "name": "egg-dora-versionmanage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "versionManage",
   "eggPlugin": {
     "name": "doraVersionManage"
@@ -49,12 +49,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-dora-versionmanage.git"
+    "url": "git+https://github.com/doramart/egg-dora-versionmanage.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/doramart/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-dora-versionmanage#readme",
+  "homepage": "https://github.com/doramart/egg-dora-versionmanage#readme",
   "author": "doramart",
   "license": "MIT"
 }
