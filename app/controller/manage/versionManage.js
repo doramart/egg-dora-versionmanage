@@ -1,8 +1,8 @@
 /*
  * @Author: doramart 
  * @Date: 2019-09-23 14:44:21 
- * @Last Modified by:   doramart 
- * @Last Modified time: 2019-09-23 14:44:21 
+ * @Last Modified by: doramart
+ * @Last Modified time: 2019-09-29 17:46:53
  */
 
 const versionManageRule = (ctx) => {
@@ -10,30 +10,22 @@ const versionManageRule = (ctx) => {
         title: {
             type: "string",
             required: true,
-            message: ctx.__("validate_inputCorrect", {
-                label: ctx.__("label_version_title")
-            })
+            message: ctx.__("validate_inputCorrect", [ctx.__("label_version_title")])
         },
         description: {
             type: "string",
             required: true,
-            message: ctx.__("validate_inputCorrect", {
-                label: ctx.__("label_version_description")
-            })
+            message: ctx.__("validate_inputCorrect", [ctx.__("label_version_description")])
         },
         version: {
             type: "number",
             required: true,
-            message: ctx.__("validate_inputCorrect", {
-                label: ctx.__("label_version_version")
-            })
+            message: ctx.__("validate_inputCorrect", [ctx.__("label_version_version")])
         },
         versionName: {
             type: "string",
             required: true,
-            message: ctx.__("validate_inputCorrect", {
-                label: ctx.__("label_version_versionName")
-            })
+            message: ctx.__("validate_inputCorrect", [ctx.__("label_version_versionName")])
         },
     }
 }
