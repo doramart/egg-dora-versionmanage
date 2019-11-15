@@ -7,7 +7,7 @@ module.exports = (options, app) => {
     return async function versionManageRouter(ctx, next) {
 
         let pluginConfig = app.config.doraVersionManage;
-        await ctx.initPluginRouter(pluginConfig, versionManageManageController, versionManageApiController);
+        await app.initPluginRouter(ctx, pluginConfig, versionManageManageController, versionManageApiController);
         await next();
 
     }
