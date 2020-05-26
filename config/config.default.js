@@ -6,7 +6,7 @@
  * @property {String} SOME_KEY - some description
  */
 
-
+const pkgInfo = require('../package.json');
 exports.doraVersionManage = {
     alias: 'versionManage', // 插件目录，必须为英文
     pkgName: 'egg-dora-versionmanage', // 插件包名
@@ -15,15 +15,14 @@ exports.doraVersionManage = {
     description: 'app版本', // 插件描述
     isadm: 1, // 是否有后台管理，1：有，0：没有，入口地址:'/ext/devteam/admin/index'
     isindex: 0, // 是否需要前台访问，1：需要，0：不需要,入口地址:'/ext/devteam/index/index'
-    version: '1.0', // 版本号
+    version: pkgInfo.version, // 版本号
     iconName: 'icon_app', // 主菜单图标名称
-    adminUrl: 'https://cdn.html-js.cn/cms/plugins/static/admin/versionManage/js/app.js',
+    adminUrl: '/versionManage/js/app.js',
     adminApi: [{
         url: 'versionManage/getList',
         method: 'get',
         controllerName: 'list',
         details: '获取版本配置',
-        noPower: true
     }, {
         url: 'versionManage/updateOne',
         method: 'post',
@@ -31,22 +30,21 @@ exports.doraVersionManage = {
         details: '更新版本信息',
     }],
     fontApi: [{
-        url: 'systemConfig/getVersionManage',
+        url: 'versionManage/getAppVersion',
         method: 'get',
-        controllerName: 'getOne',
+        controllerName: 'list',
         details: '获取app版本信息',
     }],
-    authUser: false, // 是否需要
+
     initData: '', // 初始化数据脚本
     pluginsConfig: ` 
-    exports.doraVersionManage = {\n
-        enable: true,\n
-        package: 'egg-dora-versionmanage',\n
+    module.exports = {\n
+        enable: true,\n        package: 'egg-dora-versionmanage',
     };\n
     `, // 插入到 plugins.js 中的配置
     defaultConfig: `
-    versionManageRouter:{\n
-        match: [ctx => ctx.path.startsWith('/manage/versionManage'), ctx => ctx.path.startsWith('/api/systemConfig/getVersionManage')],\n
+    module.exports = {\n
+        match: [ctx => ctx.path.startsWith('/manage/versionManage'), ctx => ctx.path.startsWith('/api/versionManage')],\n
     },\n
     `, // 插入到 config.default.js 中的配置
 }
